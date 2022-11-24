@@ -49,3 +49,45 @@ function scream(n) {
     }
     return scream
 }
+
+function screamm(n) {
+    let screamm = ''
+    for(let i =0;i < n; i++){
+        if(i % 2 === 0){
+            screamm += 'a'
+        } else if(i % 2 === 1){
+        screamm += 'A'
+        }
+    }
+    return screamm
+}
+
+function topDouble(value, top) {
+    while(top > value){
+        value *= 2
+    }
+    return value / 2
+}
+
+function checkNumber(num) {
+    if(num === 0){
+        return('zero')
+    }else if (num > 0){
+        return('positive')
+    }else{
+        return('negative')
+    }
+}
+
+function maxSum(num) {
+    let maxSum = 0
+    for(let i = 1;i <= num;i++){
+        maxSum += i
+    }
+    return maxSum
+}
+
+function startsWithX(string) {
+    string = string.toLowerCase()
+    return string.charAt(0) === 'x' ? true : false;
+}
