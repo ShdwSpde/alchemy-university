@@ -24,3 +24,6 @@ function splitAtX(string) {
      const b = string.slice((string.indexOf('x') + 1),(string.length))
      return a.length > b.length ? a : b;
 }
+
+
+more progress to come!!
