@@ -53,3 +53,51 @@ for(let element of elements){
 }
 return frequencyCounter
 }
+
+
+function playerHandScore(hand) {
+let score = 0
+for (let card of hand){
+    if(card === 'K'){
+        score += 4
+    }
+    if(card === 'Q'){
+        score += 3
+    }
+    if(card === 'J'){
+        score += 2
+    }
+}
+return score
+}
+
+
+function willEat(hasPizza, hasDonuts, hasCookies) {
+   return (hasPizza || hasDonuts || hasCookies) ? true:false;
+}
+
+function double(x) {
+    return x * 2 || 0;
+}
+
+
+function canBreathe(isConnected, hasOxygen, aboveWater) {
+    return aboveWater || (isConnected && hasOxygen) ? true : false;
+}
+
+
+//Guard Operator
+function friendName(friend) {
+    return friend && friend.name;
+}
+
+
+function carCrossing(aCrossing, bCrossing) {
+   if(aCrossing && !bCrossing){return true}
+   if(aCrossing && bCrossing){return false}
+   if(bCrossing && !aCrossing){return true}
+   if(!bCrossing && !aCrossing){return false}
+}
+
+
+
