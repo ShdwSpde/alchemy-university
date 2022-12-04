@@ -44,3 +44,12 @@ for(let i = 0; i < arr1.length;i++){
 }
 return arr1
 }
+
+
+function countElements(elements) {
+let frequencyCounter = {}
+for(let element of elements){
+        frequencyCounter[element] = (frequencyCounter[element] || 0) + 1
+}
+return frequencyCounter
+}
