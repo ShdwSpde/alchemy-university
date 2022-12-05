@@ -99,5 +99,31 @@ function carCrossing(aCrossing, bCrossing) {
    if(!bCrossing && !aCrossing){return false}
 }
 
+function throwError() {
+    const a = true
+    if(a === true){
+        throw new Error('dang, we aint do this right')
+    }
+}
 
+function catchError(fn) {
+    try {
+        fn();
+    }
+    catch(ex) {
+        console.log(ex)
+    }
+}
+
+
+
+function catchError(fn) {
+    try {
+        fn();
+    }
+    catch(err) {
+        return err
+    }
+    return false
+}
 
