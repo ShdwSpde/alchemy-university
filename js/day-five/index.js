@@ -53,3 +53,44 @@ for(let i = 0; i < numbers.length;i++){
 }
 return result
 }
+
+function thisName() {
+    return this.name
+}
+
+
+const obj = {
+    name: 'Bob',
+    getName: function(){
+        return this.name
+    }
+}
+
+
+const fetchAge = require('./fetchAge');
+
+function Celebrity(name) {
+    this.name = name;
+    const that = this;
+
+    fetchAge(this.name, function (age) {
+        that.age = age;
+    });
+}
+
+// Our Shape "Constructor"
+function Shape(x, y) {
+    let position = {x:x,y:y}
+    this.position = position;
+}
+
+
+function Shape(x, y) {
+    let position = {x:x,y:y}
+    this.position = position;
+    this.move = function(x,y){
+        this.position.x += x
+        this.position.y += y
+    }
+}
+
