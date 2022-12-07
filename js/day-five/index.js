@@ -94,3 +94,46 @@ function Shape(x, y) {
     }
 }
 
+const Shape = require('./Shape');
+
+function Circle(x, y, radius) {
+    Shape.call(this, x,y,radius);
+    this.radius = radius
+}
+
+const Shape = require('./Shape');
+
+function Circle(x, y, radius) {
+    Shape.call(this, x,y,radius);
+    this.radius = radius
+}
+
+Circle.prototype = Object.create(Shape.prototype)
+
+
+const Shape = require('./Shape');
+
+function Rectangle(x, y, height, width) {
+    Shape.call(this, x,y,height,width);
+    this.height = height;
+    this.width = width;
+}
+
+Rectangle.prototype = Object.create(Shape.prototype)
+
+
+const Shape = require('./Shape');
+
+function Rectangle(x, y, height, width) {
+    Shape.call(this, x,y,height,width);
+    this.height = height;
+    this.width = width;
+    this.flip = function(){
+        let dimensions = [height,width]
+        this.height = dimensions[1]
+        this.width = dimensions[0]
+}    
+}
+
+Rectangle.prototype = Object.create(Shape.prototype)
+
