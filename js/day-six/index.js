@@ -35,3 +35,22 @@ const sortedStudents = students.sort((a, b) => {
     return b.grade - a.grade;
 });
 }
+
+
+const MONTHS = [
+    'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+    'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
+];
+
+function sortByMonth(events) {
+  // Sort the events array by month
+  events.sort((a,b) => {
+    // Find the index of each month
+    let aIndex = MONTHS.indexOf(a.month);
+    let bIndex = MONTHS.indexOf(b.month);
+    // Compare the index of each month
+    return aIndex - bIndex;
+  });
+  return events;
+}
+
