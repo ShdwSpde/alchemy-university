@@ -108,3 +108,90 @@ class OperationManager {
         
     }
 }
+
+
+class Node {
+    constructor(data){
+        this.next = null
+        this.data = data
+    }
+    
+}
+
+
+class LinkedList {
+    constructor(){
+        this.head = null
+    }
+    addFirst(node){
+        if(this.head){
+        
+            node.next = this.head
+        }
+            this.head = node
+    }
+    addLast(node){
+      // base case
+  if (!this.head) {
+    this.head = node;
+    return;
+  }
+  // create a pointer
+  let currentNode = this.head;
+
+  // traverse the list until we get to the last node
+  while (currentNode.next) {
+    currentNode = currentNode.next;
+  }
+  // set the new node to the last node's next
+  currentNode.next = node;
+    }
+
+    indexOf(node) {
+    let currentNode = this.head;  // start at the head
+    let index = 0;  // initialize the index
+    while (currentNode) {  // loop as long as there is a node to search
+      if (currentNode === node) {  // check if the current node is the target node
+        return index;  // if it is, return the current index
+      }
+      currentNode = currentNode.next;  // move to the next node
+      index++;  // increment the index
+    }
+    return -1;  // target node was not found, return -1
+  }
+
+   removeAt(index) {
+    // if list is empty
+    if (!this.head) {
+      throw new Error('The list is empty');
+    }
+
+    // if removing head node
+    if (index === 0) {
+      this.head = this.head.next;
+    }
+
+    let current = this.head;
+    let previous;
+    let counter = 0;
+
+    while (current) {
+      if (index === counter) { 
+        // if node to remove is found 
+        if (previous) { 
+          // if node is in between head and tail
+          previous.next = current.next;
+        } else {
+          // if node is the tail
+          this.tail = previous;
+        }
+        break;
+      } 
+      counter++;
+      previous = current;
+      current = current.next;
+    }
+  }
+}
+
+
