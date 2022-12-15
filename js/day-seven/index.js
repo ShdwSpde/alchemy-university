@@ -195,3 +195,14 @@ class LinkedList {
 }
 
 
+// retrieve a prop that is deeply nested within objects
+// i.e. { prop: { prop: { prop: 3 }}} => 3
+function deepRetrieval(obj) {
+ if (obj && typeof obj === 'object') {
+        return deepRetrieval(obj.prop)
+    } else {
+        return obj;
+    }
+}
+
+
